@@ -1,0 +1,149 @@
+{
+  "getOssClient": {
+    "data": {
+      "bucket": "qlm-resource-uat",
+      "programPath": "resources/works/textProgram/2018101819280273"
+    },
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "createRoom": {
+    "data": {
+      "teacher": {
+        "id": "2008192838",
+        "status": "online"
+      },
+      "students": {},
+      "roomId": "38273"
+    },
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "userAccountGetStudents": {
+    "data": [
+      {
+        "address": "",
+        "birthday": "2015-01-01 00:00:00",
+        "code": 0,
+        "createTime": "2018-09-30 15:15:27",
+        "drainState": 1,
+        "founderId": "0",
+        "gender": 1,
+        "id": "20180930151527042",
+        "idCard": "",
+        "modifierId": "0",
+        "modifyTime": "2018-10-24 15:36:58",
+        "name": "潘同学",
+        "orgId": "20180711160028",
+        "parentName": "潘",
+        "payState": 0,
+        "remark": "",
+        "school": "",
+        "sourceType": 0,
+        "sourceTypeOther": "",
+        "state": 0,
+        "type": 0
+      },
+      {
+        "address": "",
+        "birthday": "2015-01-01 00:00:00",
+        "code": 0,
+        "createTime": "2018-09-30 15:15:27",
+        "drainState": 1,
+        "founderId": "0",
+        "gender": 1,
+        "id": "20180930151527042",
+        "idCard": "",
+        "modifierId": "0",
+        "modifyTime": "2018-10-24 15:36:58",
+        "name": "张同学",
+        "orgId": "20180711160028",
+        "parentName": "潘",
+        "payState": 0,
+        "remark": "",
+        "school": "",
+        "sourceType": 0,
+        "sourceTypeOther": "",
+        "state": 0,
+        "type": 0
+      }
+    ],
+    "id": 0,
+    "loginSuccess": true,
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "userAccountLogin": {
+    "data": {
+      "accountName": "18826291014",
+      "password": "kkkk",
+      "type": 1
+    }
+  },
+  "userAccountLogin2": {
+    "id": 0,
+    "state": {
+      "code": 5000,
+      "msg": "账号名错误"
+    }
+  },
+  "userAccountCaptcha": {
+    "id": 0,
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "userAccountRegister2": {
+    "id": 0,
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "userAccountRegister": {
+    "id": 0,
+    "state": {
+      "code": 5000,
+      "msg": "用户名已存在，请直接登录"
+    }
+  },
+  "userAccountFindPwd": {
+    "id": 0,
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "userAccountChangPwd": {
+    "id": 0,
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "sysBannerList": {
+    "data": {}
+  },
+  "userAccountLogout": {
+    "id": 0,
+    "state": {
+      "code": 2000,
+      "msg": "操作成功"
+    }
+  },
+  "login": {
+    "id": 0,
+    "loginSuccess": false,
+    "state": {
+      "code": 4001,
+      "msg": "没有登录状态"
+    }
+  }
+}

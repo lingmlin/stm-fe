@@ -1,0 +1,28 @@
+@import './mixins.scss';
+
+body {
+  font-size: $fontSizeBody;
+  font-family: 'Microsoft YaHei', 'Pingfang SC', 'Helvetica Neue', Helvetica,
+    STHeiTi, sans-serif;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#root,
+.main-container {
+  height: 100%;
+}
+
+.main-container {
+  overflow-y: scroll;
+  &.hide-scroll-bar {
+    overflow: hidden;
+  }
+}

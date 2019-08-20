@@ -1,0 +1,27 @@
+/*
+ * react s alert 警告样式
+ * @Author: Jiajun Yan 
+ * @Date: 2018-11-14 17:29:30 
+ * @Last Modified by: Jiajun Yan
+ * @Last Modified time: 2018-11-14 17:30:14
+ */
+
+.s-alert-box {
+  min-width: 200px;
+}
+
+.s-alert-close {
+  display: none;
+}
+
+.s-alert-error {
+  padding: 15px;
+  background: #f43531;
+  box-shadow: 0 2px 14px 0 rgba(255, 0, 0, 0.89);
+}
+
+.s-alert-success {
+  padding: 15px;
+  background: #31f45b;
+  box-shadow: 0 2px 14px 0 rgba(0, 255, 157, 0.89);
+}

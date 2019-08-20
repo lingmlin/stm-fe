@@ -1,0 +1,13 @@
+{
+  "/sysBanner/list": "/sysBannerList",
+  "/userAccount/login": "/userAccountLogin",
+  "/userAccount/login/error": "/userAccountLoginError",
+  "/userAccount/captcha": "/userAccountCaptcha",
+  "/userAccount/register" : "/userAccountRegister",
+  "/userAccount/findPwd": "/userAccountFindPwd",
+  "/userAccount/changPwd": "/userAccountChangPwd",
+  "/userAccount/logout": "/userAccountLogout",
+  "/userAccount/getStudents": "/userAccountGetStudents",
+  "/interactiveClass/createRoom":"/createRoom",
+  "/upload/getOssClient":"/getOssClient"
+}
