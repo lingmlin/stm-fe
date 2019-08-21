@@ -1,13 +1,14 @@
 import React from 'react';
 
 import {Button, Form, InputGroup,Col,Container,Row} from 'react-bootstrap';
+import { Redirect} from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
 
 import './info.scss';
 import banklogo from '../../banklogo.png';
-
+import Logo from '~src/containers/logo';
 
 
 const InfoUpdateComponent = props => {
@@ -18,8 +19,10 @@ const InfoUpdateComponent = props => {
   return (
 
     <Container>
+
+      <Logo/>
       
-        <img src={banklogo} className="logo"></img>
+        
       
       <Row className="justify-content-md-center">
         <Col>
@@ -35,9 +38,9 @@ const InfoUpdateComponent = props => {
                     required
                     type="text"
                     placeholder="First name"
-                    defaultValue="Mark"
+                    defaultValue="Dawen"
                   />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">Please provide a valid name.</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="4" controlId="validationCustom02">
                   <Form.Label>Last name</Form.Label>
@@ -45,48 +48,44 @@ const InfoUpdateComponent = props => {
                     required
                     type="text"
                     placeholder="Last name"
-                    defaultValue="Otto"
+                    defaultValue="Chen"
                   />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">Please provide a valid name.</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-                  <Form.Label>Username</Form.Label>
-                  <InputGroup>
-                    <InputGroup.Prepend>
-                      <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                    </InputGroup.Prepend>
+                  <Form.Label>ID no.</Form.Label>
+                  
+                    
                     <Form.Control
                       type="text"
-                      placeholder="Username"
-                      aria-describedby="inputGroupPrepend"
-                      required
+                      placeholder="ID no."                      
+                      required   
+                      defaultValue="1234567890"                   
                     />
-                    <Form.Control.Feedback type="invalid">
-                      Please choose a username.
-                    </Form.Control.Feedback>
-                  </InputGroup>
+                    <Form.Control.Feedback type="invalid">Please provide a ID no.</Form.Control.Feedback>
+              
                 </Form.Group>
               </Form.Row>
               <Form.Row>
-                <Form.Group as={Col} md="6" controlId="validationCustom03">
-                  <Form.Label>City</Form.Label>
-                  <Form.Control type="text" placeholder="City" required />
+                <Form.Group as={Col} md="10" controlId="validationCustom03">
+                  <Form.Label>Address</Form.Label>
+                  <Form.Control type="text" placeholder="Address" required defaultValue="Garden Hotel Guangzhou"/>
                   <Form.Control.Feedback type="invalid">
-                    Please provide a valid city.
+                    Please provide a valid address.
                   </Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group as={Col} md="3" controlId="validationCustom04">
-                  <Form.Label>State</Form.Label>
-                  <Form.Control type="text" placeholder="State" required />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid state.
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col} md="3" controlId="validationCustom05">
+                <Form.Group as={Col} md="2" controlId="validationCustom04">
                   <Form.Label>Zip</Form.Label>
-                  <Form.Control type="text" placeholder="Zip" required />
+                  <Form.Control type="text" placeholder="Zip" required defaultValue="123456"/>
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid zip.
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group as={Col} md="6" controlId="validationCustom05">
+                  <Form.Label>Mobile</Form.Label>
+                  <Form.Control type="text" placeholder="Mobile" required defaultValue="1234567890"/>
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a valid mobile number.
                   </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
@@ -101,11 +100,17 @@ const InfoUpdateComponent = props => {
             </Form>
       </Row>
 
+      {state.submitted &&
+              <Redirect to="/waiting-staff"/>
+            }
+
     </Container>
     	
 
   );
 };
+
+
 
 InfoUpdateComponent.propTypes = {
   state: PropTypes.object,

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import './facial.scss';
 import Camera from 'react-camera';
 import banklogo from '../../banklogo.png';
-
+import Logo from '~src/containers/logo';
 
 
 const FacialComponent = props => {
@@ -17,7 +17,7 @@ const FacialComponent = props => {
 
   return (
     <Container>
-    <img src={banklogo} className="logo"></img>
+      <Logo/>
       <Row className="justify-content-md-center">
         <Col>
           <div className="header">Please look into the camera</div>

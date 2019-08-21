@@ -8,6 +8,9 @@ import './swiper.scss';
 import './index.scss';
 
 import banklogo from '../../banklogo.png';
+import print from './print.JPG';
+import info from './info.jpg';
+import card from './card.jpg';
 
 
 const IndexComponent = props => {
@@ -21,7 +24,7 @@ const IndexComponent = props => {
       <img src={banklogo} className="logo"></img>
       <Row className="justify-content-md-center">
         <Col>
-          <div className="header">Welcome to Smart Teller Machine</div>
+          <div className="header">Welcome to Smart Teller Machine<br/>Please select service</div>
         </Col>
       </Row>
       <Row className="justify-content-md-center">
@@ -29,19 +32,23 @@ const IndexComponent = props => {
           <NavLink
                       to="/idcard"
                     >
-                      <Button variant="danger" size="lg">Information Update</Button> 
+                      <img src={info}/>
                     </NavLink>
                     
                   
           
         </Col>
+        <Col md="auto">
+          <img src={print}/>
+        </Col>
+        <Col md="auto">
+          <img src={card}/>
+        </Col>
         
       </Row>
 <br/>
       <Row className="justify-content-md-center">
-        <Col md="auto">
-          <Button variant="danger" size="lg">Print Transaction History</Button>
-        </Col>
+        
       </Row>
       
     </Container>

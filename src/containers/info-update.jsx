@@ -10,7 +10,9 @@ class InfoUpdate extends Component {
     super();
 
     this.state = {
-        validated : false
+        validated : false,
+        submitted: false
+
       }
     bindAll(this, ['handleSubmit']);
     
@@ -21,14 +23,23 @@ class InfoUpdate extends Component {
 
   handleSubmit (event) {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
+    
+    event.preventDefault();
       event.stopPropagation();
+    // else{
+      this.setState({
+        validated:true
+      });  
+    // }
+
+    if (form.checkValidity()) {
+      this.setState({
+        submitted:true
+      });
     }
 
-    this.setState({
-      validated:true
-    });
+    
+
   }
 
 

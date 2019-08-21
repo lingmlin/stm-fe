@@ -7,14 +7,15 @@ import Logo from '~src/containers/logo';
 
 import PropTypes from 'prop-types';
 
-import './idcard.scss';
-import idIcon from './id.png';
-import banklogo from '../../banklogo.png';
+import './waiting-staff.scss';
+
+import ad from './ad.jpg';
+import { Redirect} from 'react-router-dom';
 
 
 
 
-const IndexComponent = props => {
+const WaitingStaffComponent = props => {
   const { state } = props;
 
 
@@ -23,27 +24,30 @@ const IndexComponent = props => {
     <Container>
     <Logo></Logo>
       <Row className="justify-content-md-center">
-        <Col>
-          <div className="header">Please insert your ID card</div>
+        <Col lg="auto">
+          <div className="header">Our staff is processing your request, please wait.<br/>Below is our latest promotion for you:
+          </div>
         </Col>
       </Row>
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <NavLink to="/facial">
-            <img src={idIcon} className="idIcon"></img>
-          </NavLink>
-          
+          <img src={ad} className="ad"/>
         </Col>
       </Row>
+
+      {state.complete &&
+        <Redirect to="/completion"/>
+      }
+      
       
     </Container>
 
   );
 };
 
-IndexComponent.propTypes = {
+WaitingStaffComponent.propTypes = {
   state: PropTypes.object,
 
 };
 
-export default IndexComponent;
+export default WaitingStaffComponent;

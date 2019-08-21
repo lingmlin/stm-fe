@@ -21,6 +21,9 @@ import Index from '~src/containers/index';
 const IdCard = asyncComponent(() => import('~src/containers/idcard'));
 const Facial = asyncComponent(() => import('~src/containers/facial'));
 const InfoUpdate = asyncComponent(() => import('~src/containers/info-update'));
+const WaitingStaff = asyncComponent(() => import('~src/containers/waiting-staff'));
+const Completion = asyncComponent(() => import('~src/containers/completion'));
+
 
 
 
@@ -39,6 +42,8 @@ class MainContainer extends Component {
           <Route path="/idcard" component={IdCard} />
           <Route path="/facial" component={Facial} />
           <Route path="/info-update" component={InfoUpdate} />
+          <Route path="/waiting-staff" component={WaitingStaff} />
+          <Route path="/completion" component={Completion} />
 		     
           <Redirect to="/" />
         </Switch>
