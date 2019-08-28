@@ -1,16 +1,16 @@
 
 
 import React, { Component } from 'react';
-import IdComponent from '~src/components/idcard/idcard';
+import ScanResultComponent from '~src/components/scan-result/scan-result';
 import bindAll from 'lodash.bindall';
 import sendRequest from '~src/requests/index';
 
-class IdCard extends Component {
+class ScanResult extends Component {
   constructor() {
     super();
 
     this.state = {
-     
+     complete:false
       }
     
 
@@ -19,18 +19,24 @@ class IdCard extends Component {
 
  abc(){}
 
-  componentWillMount() {
+  componentDidMount() {
+    let that=this;
+    setTimeout(function(){
+      that.setState({
+        complete:true
+      });
+    },5000);
     
     //document.title = 'STM';
   }
 
   render() {
     return (
-      <IdComponent
+      <ScanResultComponent
         state={this.state}
       />
     );
   }
 }
 
-export default IdCard;
+export default ScanResult;

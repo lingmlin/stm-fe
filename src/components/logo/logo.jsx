@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import './logo.scss';
 
-import banklogo from './banklogo.png';
+import banklogo from '../../banklogo.png';
 
 
 

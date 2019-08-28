@@ -9,9 +9,15 @@ import Camera from 'react-camera';
 import banklogo from '../../banklogo.png';
 import Logo from '~src/containers/logo';
 
+import { Redirect} from 'react-router-dom';
+
 
 const FacialComponent = props => {
-  const { state } = props;
+  const { 
+    state,
+    capture
+
+   } = props;
 
 
 
@@ -45,20 +51,21 @@ const FacialComponent = props => {
       </Row>
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <NavLink
-            to="/info-update"
-          >
-            <Button variant="danger" size="lg">Capture</Button> 
-          </NavLink>
+          
+            <Button variant="danger" size="lg" onClick={capture}>Capture</Button> 
+          
         </Col>
       </Row>
-      
+      {state.complete &&
+        <Redirect to="/info-update"/>
+      }
     </Container>
   );
 };
 
 FacialComponent.propTypes = {
   state: PropTypes.object,
+  capture: PropTypes.func
 
 };
 
