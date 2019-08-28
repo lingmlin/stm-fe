@@ -57,7 +57,7 @@ const FacialComponent = props => {
         </Col>
       </Row>
       {state.complete &&
-        <Redirect to="/info-update"/>
+        <Redirect to="/scan-result"/>
       }
     </Container>
   );
