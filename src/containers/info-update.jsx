@@ -98,8 +98,8 @@ class InfoUpdate extends Component {
         last_name:this.state.lastName,
         address:this.state.add,
         mobile_phone:this.state.mobile,
-        zip:this.state.zip,
-        id_no:this.state.id
+        zip:parseInt(this.state.zip),
+        id_no:parseInt(this.state.id)
 
 
       };

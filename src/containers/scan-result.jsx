@@ -25,7 +25,7 @@ class ScanResult extends Component {
       that.setState({
         complete:true
       });
-    },5000);
+    },3000);
     
     //document.title = 'STM';
   }
