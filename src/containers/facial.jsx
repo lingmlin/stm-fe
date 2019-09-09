@@ -3,6 +3,9 @@
 import React, { Component } from 'react';
 import FacialComponent from '~src/components/facial/facial';
 import bindAll from 'lodash.bindall';
+import store from '~src/store/store';
+import {connect} from 'react-redux';
+import * as userForm from '~src/store/userForm/actions'
 
 import envconfig from '~src/envconfig/envconfig';
 const URL = envconfig.baseURL;
@@ -56,6 +59,22 @@ class Facial extends Component {
   .then(response =>
   {
     console.log('succ',response);
+
+      const action = userForm.downloadForm;
+      // first_name:state.userForm.first_name,
+      // last_name:state.userForm.last_name,
+      // address: state.userForm.addChange,
+      // id_no:state.userForm.id_no,
+      // mobile_phone:state.userForm.mobile_phone,
+      // zip:state.userForm.zip
+      action.first_name = response.first_name;
+      action.last_name=response.last_name;
+      action.address = response.address;
+      action.id_no = response.id_no;
+      action.mobile_phone = response.mobile_phone;
+      action.zip = response.zip;
+
+      store.dispatch(action);
     
       that.setState({
         complete: true
@@ -102,4 +121,12 @@ class Facial extends Component {
   }
 }
 
-export default Facial;
+const mapStateToProps = state =>{
+    console.log('map1',state.userForm.first_name);
+    return {
+      first_name:state.userForm.first_name,
+      last_name:state.userForm.last_name
+    }
+  };
+
+export default connect(mapStateToProps)(Facial);

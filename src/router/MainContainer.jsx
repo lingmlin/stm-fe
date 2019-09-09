@@ -62,12 +62,12 @@ class MainContainer extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    scrollBarIsHidden: state.scrollBarReducer.scrollBarIsHidden
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     scrollBarIsHidden: state.scrollBarReducer.scrollBarIsHidden
+//   };
+// };
 
 export default withRouter(
-  connect(mapStateToProps)(props => <MainContainer {...props} />)
+  (props => <MainContainer {...props} />)
 );

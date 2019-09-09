@@ -1,4 +1,4 @@
 module.exports = {
-  devHost: 'http://uat.qlm-edu.com/scratch',
-  prodHost: 'http://qlmcode.com/scratch'
+  devHost: 'http://smartteller.cn',
+  prodHost: 'http://smartteller.cn'
 }

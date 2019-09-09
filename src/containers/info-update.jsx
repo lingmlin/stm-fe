@@ -1,6 +1,7 @@
 
 
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import InfoUpdateComponent from '~src/components/info-update/info';
 import bindAll from 'lodash.bindall';
 import envconfig from '~src/envconfig/envconfig';
@@ -10,18 +11,20 @@ const fetch = require('node-fetch');
 class InfoUpdate extends Component {
   constructor() {
     super();
+console.log('constructor',this);
 
     this.state = {
         validated : false,
         submitted: false,
-        firstName:'Dawenp',
-        lastName:'Chen',
-        id:'111111111',
-        add:'Garden Hotel Guangzhou',
-        zip:'123456',
-        mobile:'0123456789'
+        firstName:'',
+        lastName:'',
+        id:'',
+        add:'',
+        zip:'',
+        mobile:''
 
       }
+
     bindAll(this, [
       'handleSubmit',
       'firstNameChange',
@@ -130,10 +133,24 @@ class InfoUpdate extends Component {
   }
 
 
+
   componentWillMount() {
+
+    if(this.props){
+      this.setState({
+        firstName:this.props.first_name,
+        lastName:this.props.last_name,
+        id:this.props.id_no,
+        add:this.props.address,
+        zip:this.props.zip,
+        mobile:this.props.mobile_phone
+      })
+    }
     
     //document.title = 'STM';
   }
+
+
 
   render() {
     return (
@@ -154,5 +171,17 @@ class InfoUpdate extends Component {
     );
   }
 }
+const mapStateToProps = state =>{
+    console.log('map',state.userForm.first_name);
+    console.log('map',state.userForm.last_name);
+    return {
+      first_name:state.userForm.first_name,
+      last_name:state.userForm.last_name,
+      address: state.userForm.address,
+      id_no:state.userForm.id_no,
+      mobile_phone:state.userForm.mobile_phone,
+      zip:state.userForm.zip
+    }
+  };
 
-export default InfoUpdate;
+export default connect(mapStateToProps)(InfoUpdate);
