@@ -17,15 +17,21 @@ import '../style/s-alert-box.scss';
 import Index from '~src/containers/index';
 //import IdCard from '~src/containers/idcard';
 
-
+const Mainmenu = asyncComponent(() => import('~src/containers/mainmenu'));
 const IdCard = asyncComponent(() => import('~src/containers/idcard'));
 const Facial = asyncComponent(() => import('~src/containers/facial'));
+const QrCode = asyncComponent(() => import('~src/containers/qrcode'));
 const ScanResult = asyncComponent(() => import('~src/containers/scan-result'));
+
 
 const InfoUpdate = asyncComponent(() => import('~src/containers/info-update'));
 const WaitingStaff = asyncComponent(() => import('~src/containers/waiting-staff'));
 const Completion = asyncComponent(() => import('~src/containers/completion'));
 
+const AccountHistory = asyncComponent(() => import('~src/containers/account-history'));
+
+const QueueIndex = asyncComponent(() => import('~src/containers/queuing/index'));
+const Indication = asyncComponent(() => import('~src/containers/queuing/indication'));
 
 
 
@@ -42,12 +48,18 @@ class MainContainer extends Component {
   
         <Switch>
           <Route path="/" exact component={Index} />
+          <Route path="/mainmenu" component={Mainmenu} />
           <Route path="/idcard" component={IdCard} />
           <Route path="/facial" component={Facial} />
+          <Route path="/qrcode" component={QrCode} />
           <Route path="/scan-result" component={ScanResult} />
           <Route path="/info-update" component={InfoUpdate} />
           <Route path="/waiting-staff" component={WaitingStaff} />
           <Route path="/completion" component={Completion} />
+          <Route path="/account-history" component={AccountHistory} />
+
+          <Route path="/queue/index" component={QueueIndex} />
+          <Route path="/queue/indication" component={Indication} />
 		     
           <Redirect to="/" />
         </Switch>
@@ -69,5 +81,5 @@ const mapStateToProps = state => {
 };
 
 export default withRouter(
-  connect(mapStateToProps)(props => <MainContainer {...props} />)
+  (props => <MainContainer {...props} />)
 );

@@ -13,9 +13,9 @@ console.log(argv)
 
 switch (argv) {
   case 'dev':
-    // bucket = 'qlm-education-uat';
-    // localPath = `${process.cwd()}/dist`;
-    // remotePath = `/`;
+     bucket = 'stm-fe';
+     localPath = `${process.cwd()}/dist`;
+     remotePath = `/`;
     break;
   case 'prod':
     // bucket = 'qlm-education-prod';
@@ -25,10 +25,10 @@ switch (argv) {
 }
 
 var client = new OSS({
-  // region: 'oss-cn-shenzhen',
-  // accessKeyId: 'LTAI1kgKTNiVqUFV',
-  // accessKeySecret: ,
-  // bucket: bucket
+   region: 'oss-cn-shenzhen',
+   accessKeyId: 'LTAIix3eceQiZzFv',
+   accessKeySecret: 'R80MWAZkyL3zjdlMm9F8O61h0UycXF',
+   bucket: bucket
 })
 
 localPath = path.resolve(localPath)

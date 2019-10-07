@@ -8,9 +8,10 @@ import './swiper.scss';
 import './index.scss';
 
 import banklogo from '../../banklogo.png';
-import print from './print.JPG';
-import info from './info.jpg';
-import card from './card.jpg';
+import registered from './id-pre.png';
+import mainmenu from './selectserv.png';
+import { Redirect} from 'react-router-dom';
+
 
 
 const IndexComponent = props => {
@@ -24,32 +25,33 @@ const IndexComponent = props => {
       <img src={banklogo} className="logo"></img>
       <Row className="justify-content-md-center">
         <Col>
-          <div className="header">Welcome to Smart Teller Machine<br/>Please select service</div>
+          <div className="header">Welcome to Smart Teller Machine</div>
         </Col>
       </Row>
       <Row className="justify-content-md-center">
         <Col md="auto">
-          <NavLink
-                      to="/idcard"
-                    >
-                      <img src={info}/>
-                    </NavLink>
-                    
-                  
+          
+                      <img src={registered}/>                  
           
         </Col>
         <Col md="auto">
-          <img src={print}/>
+          <NavLink
+                      to="/mainmenu"
+                    >
+                      <img src={mainmenu}/>   
+          </NavLink>               
+          
         </Col>
-        <Col md="auto">
-          <img src={card}/>
-        </Col>
+      
         
       </Row>
 <br/>
       <Row className="justify-content-md-center">
         
       </Row>
+      {state.complete &&
+        <Redirect to="/facial"/>
+      }
       
     </Container>
 

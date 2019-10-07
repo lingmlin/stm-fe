@@ -12,7 +12,17 @@ import Logo from '~src/containers/logo';
 
 
 const InfoUpdateComponent = props => {
-  const { state,handleSubmit } = props;
+  const { 
+    state,
+    handleSubmit,
+    firstNameChange,
+    lastNameChange,
+    idChange,
+    addChange,
+    zipChange,
+    mobileChange
+
+     } = props;
 
 
 
@@ -37,8 +47,9 @@ const InfoUpdateComponent = props => {
                   <Form.Control
                     required
                     type="text"
+                    onChange={firstNameChange}
                     placeholder="First name"
-                    defaultValue="Dawen"
+                    value={state.firstName}
                   />
                   <Form.Control.Feedback type="invalid">Please provide a valid name.</Form.Control.Feedback>
                 </Form.Group>
@@ -48,7 +59,8 @@ const InfoUpdateComponent = props => {
                     required
                     type="text"
                     placeholder="Last name"
-                    defaultValue="Chen"
+                    value={state.lastName}
+                    onChange={lastNameChange}
                   />
                   <Form.Control.Feedback type="invalid">Please provide a valid name.</Form.Control.Feedback>
                 </Form.Group>
@@ -60,7 +72,8 @@ const InfoUpdateComponent = props => {
                       type="text"
                       placeholder="ID no."                      
                       required   
-                      defaultValue="1234567890"                   
+                      value={state.id}
+                      onChange={idChange}
                     />
                     <Form.Control.Feedback type="invalid">Please provide a ID no.</Form.Control.Feedback>
               
@@ -69,21 +82,30 @@ const InfoUpdateComponent = props => {
               <Form.Row>
                 <Form.Group as={Col} md="10" controlId="validationCustom03">
                   <Form.Label>Address</Form.Label>
-                  <Form.Control type="text" placeholder="Address" required defaultValue="Garden Hotel Guangzhou"/>
+                  <Form.Control type="text" placeholder="Address" required 
+                  value={state.add}
+                  onChange={addChange}
+                  />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid address.
                   </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="2" controlId="validationCustom04">
                   <Form.Label>Zip</Form.Label>
-                  <Form.Control type="text" placeholder="Zip" required defaultValue="123456"/>
+                  <Form.Control type="text" placeholder="Zip" required 
+                    value={state.zip}
+                    onChange={zipChange}
+                  />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid zip.
                   </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="6" controlId="validationCustom05">
                   <Form.Label>Mobile</Form.Label>
-                  <Form.Control type="text" placeholder="Mobile" required defaultValue="1234567890"/>
+                  <Form.Control type="text" placeholder="Mobile" required 
+                    value={state.mobile}
+                    onChange={mobileChange}
+                  />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid mobile number.
                   </Form.Control.Feedback>
@@ -114,7 +136,12 @@ const InfoUpdateComponent = props => {
 
 InfoUpdateComponent.propTypes = {
   state: PropTypes.object,
-  handleSubmit:PropTypes.func
+  handleSubmit:PropTypes.func,
+  firstNameChange:PropTypes.func,
+  lastNameChange:PropTypes.func,
+  idChange:PropTypes.func,
+  addChange:PropTypes.func,
+  mobileChange:PropTypes.func,
 
 };
 

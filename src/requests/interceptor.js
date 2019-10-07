@@ -1,7 +1,7 @@
 
 
 import axios from 'axios';
-import * as loginActions from '~src/store/login/actions';
+// import * as loginActions from '~src/store/login/actions';
 import store from '~src/store/store';
 
 // 拦截 request ，设置全局请求为 ajax 请求
@@ -30,10 +30,10 @@ axios.interceptors.response.use(
         );
 
       case 4001:
-        if (data.loginBox) {
-          // 表示用户未登录，需要弹出登录框
-          store.dispatch(loginActions.openModal);
-        }
+        // if (data.loginBox) {
+        //   // 表示用户未登录，需要弹出登录框
+        //   store.dispatch(loginActions.openModal);
+        // }
 
         return data.data || null;
 

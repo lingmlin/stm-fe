@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import ScanResultComponent from '~src/components/scan-result/scan-result';
 import bindAll from 'lodash.bindall';
+import {connect} from 'react-redux';
 import sendRequest from '~src/requests/index';
 
 class ScanResult extends Component {
@@ -25,7 +26,7 @@ class ScanResult extends Component {
       that.setState({
         complete:true
       });
-    },5000);
+    },3000);
     
     //document.title = 'STM';
   }
@@ -34,9 +35,16 @@ class ScanResult extends Component {
     return (
       <ScanResultComponent
         state={this.state}
+        transaction={this.props.transaction}
       />
     );
   }
 }
 
-export default ScanResult;
+const mapStateToProps = state =>{
+  return {
+    transaction:state.userForm.transaction
+  }
+};
+
+export default connect(mapStateToProps)(ScanResult);

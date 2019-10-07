@@ -15,7 +15,9 @@ import waiting from './waiting.gif';
 
 
 const ScanResultComponent = props => {
-  const { state } = props;
+  const { state,
+    transaction
+   } = props;
 
 
 
@@ -37,7 +39,8 @@ const ScanResultComponent = props => {
       </Row>
 
       {state.complete &&
-        <Redirect to="/info-update"/>
+        transaction === 1 &&      
+        <Redirect to="/account-history"/>
       }
       
     </Container>
@@ -47,6 +50,7 @@ const ScanResultComponent = props => {
 
 ScanResultComponent.propTypes = {
   state: PropTypes.object,
+  transaction: PropTypes.number,
 
 };
 
