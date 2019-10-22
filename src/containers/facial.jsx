@@ -5,7 +5,7 @@ import FacialComponent from '~src/components/facial/facial';
 import bindAll from 'lodash.bindall';
 import store from '~src/store/store';
 import {connect} from 'react-redux';
-import * as userForm from '~src/store/userForm/actions'
+import * as userForm from '~src/store/userForm/actions';
 
 import envconfig from '~src/envconfig/envconfig';
 const URL = envconfig.baseURL;

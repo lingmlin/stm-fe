@@ -68,7 +68,7 @@ const CompletionComponent = props => {
           </Row>
       }
       {state.complete &&
-        <Redirect to="/"/>
+        <Redirect to="/mainmenu"/>
       }      
       
     </Container>

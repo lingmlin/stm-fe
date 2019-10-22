@@ -1,5 +1,6 @@
 
 const initState = {
+  transaction:0,
   first_name:'hh',
   last_name:'',
   address:'',
@@ -17,6 +18,7 @@ export const userForm = (state = initState, action) => {
     console.log('userForm',action.first_name);
     return {
       ...state,
+      transaction:action.transaction,
       first_name:action.first_name,
       last_name:action.last_name,
       address:action.address,
